@@ -7,10 +7,12 @@ function randomTanah(tanah) {
     // length = jumlah node list pada tanah
     // florr untuk melakukan pembualatan kebawah.
     // pembulatan ada ,florr(lantai kebawah) round(round pembulatan terdekat), ceil= pembulatan keatas
-    return tRandom;
+    return tanah[tRandom];
+    // kembalikan ketanah yang berapa
 }
 
-function munculkanTikus(tanah) {
+function munculkanTikus() {
+    const tRandom = randomTanah(tanah);
     tanah[1].classList.add('muncul');
     // kelas index ke 1 kita mw tambhin kelas muncul
     // dalam class list itu kita bsa mengecek, menambah atau menghapus elemen tertentu. 
