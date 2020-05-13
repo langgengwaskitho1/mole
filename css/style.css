@@ -3,3 +3,47 @@ h1 {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.container {
+    width: 600px;
+    margin: auto;
+    border: 1px solid black;
+}
+
+.tanah {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    /* overflow itu artinya bablas, jka lewat dari itu maka semnbunyikan */
+    float: left;
+}
+
+.tanah::after {
+    /* nanti kita akan bikin tanahnya ada disetelah tanahnya, agar tidak susah nyimpan tikusnya */
+    content: '' ;
+    display: block;
+    width: 200px;
+    height: 100px;
+    background: url(../img/tanah.png) bottom center no-repeat;
+    background-size: 80%;
+    position: absolute;
+    bottom: -25px;
+}
+
+.tikus {
+    width: 100%;
+    height: 100%;
+    background: url(../img/tikus2.png) bottom center no-repeat;
+    background-size: 60%;
+    position: absolute;
+    /* absolute agar bisa digeser2 */
+    top:100px;
+    transition: top 0.3s;
+
+}
+
+/* membuat class ketika diterapkan maka tkusnya muncul */
+.tanah.muncul .tikus {
+    top: -15px;
+}
