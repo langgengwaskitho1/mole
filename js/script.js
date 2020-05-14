@@ -3,6 +3,7 @@ const tanah = document.querySelectorAll('.tanah');
 const tikus = document.querySelectorAll('.tikus');
 
 let tanahSebelumnya;
+let selesai = false;
 
 function randomTanah(tanah) {
     const t = Math.floor(Math.random() * tanah.length);
@@ -33,6 +34,15 @@ function munculkanTikus() {
     // dalam class list itu kita bsa mengecek, menambah atau menghapus elemen tertentu. 
     setTimeout(() => {
         tRandom.classList.remove('muncul');
-        munculkanTikus();
+        if (!selesai) {
+            munculkanTikus();
+        }
     }, wRandom);
+}
+
+function mulai() {
+    munculkanTikus();
+    setTimeout(() => {
+        selesai = true;
+    }, 10000);
 }
