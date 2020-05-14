@@ -2,6 +2,7 @@ const tanah = document.querySelectorAll('.tanah');
 // query selector all digunakn untuk semua
 const tikus = document.querySelectorAll('.tikus');
 const papanSkor = document.querySelector('.papan-skor');
+const pop = document.querySelector('#pop');
 
 let tanahSebelumnya;
 let selesai;
@@ -54,12 +55,13 @@ function mulai() {
 
 function pukul() {
     skor++;
+    this.parentNode.classList.remove('muncul');
+    pop.play();
     papanSkor.textContent = skor;
 }
 
 // lakukan pengulangan ambil elemen sbgai t
 tikus.forEach(t => {
     // disini gak pakai error function karena jika pakai error function maka tidak ada thisnya
-    t.addEventListener('click', function() {
-    });
+    t.addEventListener('click', pukul);
 });
